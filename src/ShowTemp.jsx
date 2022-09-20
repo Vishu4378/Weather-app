@@ -30,12 +30,12 @@ function ShowTemp({ text, input }) {
   return (
     <>
       <div className="">
-        <p className="text-center text-gray-200 font-semibold">{input}</p>
+        <p className="font-semibold text-center text-gray-200">{input}</p>
         {input && (
-          <hr className="text-gray-200 w-36 text-center mx-auto mt-1"></hr>
+          <hr className="mx-auto mt-1 text-center text-gray-200 w-36"></hr>
         )}
         <div className="flex justify-between px-3 mt-8">
-          <div className="w-32 h-40 bg-white rounded-lg p-2">
+          <div className="w-32 h-40 p-2 bg-white rounded-lg">
             <h5 className="text-sm text-gray-700">Temprature</h5>
             <div className="flex mt-2">
               {input ? (
@@ -48,45 +48,45 @@ function ShowTemp({ text, input }) {
               <p className="font-semibold">°C</p>
             </div>
           </div>
-          <div className="flex flex-col text-center justify-between">
+          <div className="flex flex-col justify-between text-center">
             <p className="text-gray-200">{text.description}</p>
             <div>
               <img
-                className="w-24 hover:scale-125 transition-transform "
+                className="w-24 transition-transform hover:scale-125 "
                 src={img}
               ></img>
             </div>
             <div className="flex space-x-2">
-              <h5 className="card-title text-xs text-gray-200">Humidity </h5>
+              <h5 className="text-xs text-gray-200 card-title">Humidity </h5>
               <p className="text-gray-200"> {text.humidity}%</p>
             </div>
           </div>
 
-          <div className="w-32 h-40 bg-white rounded-lg p-2">
+          <div className="w-32 h-40 p-2 bg-white rounded-lg">
             <div>
-              <p className="font-semibold text-xs">Min Temp : </p>
+              <p className="text-xs font-semibold">Min Temp : </p>
 
               <div className="flex pl-10">
                 {input ? (
-                  <p className="text-4xl font-semibold">
+                  <p className="text-2xl font-semibold">
                     {convertToK(text.temp_min)}{" "}
                   </p>
                 ) : (
-                  <p className="text-4xl font-semibold">{text.temp_min}</p>
+                  <p className="text-2xl font-semibold">{text.temp_min}</p>
                 )}
-                <p className="font-semibold text-xs">°C</p>
+                <p className="text-xs font-semibold">°C</p>
               </div>
-              <p className="font-semibold text-xs">Max Temp : </p>
+              <p className="text-xs font-semibold">Max Temp : </p>
 
               <div className="flex pl-10">
                 {input ? (
-                  <p className="text-4xl font-semibold">
+                  <p className="text-2xl font-semibold">
                     {convertToK(text.temp_max)}{" "}
                   </p>
                 ) : (
-                  <p className="text-4xl font-semibold">{text.temp_max}</p>
+                  <p className="text-2xl font-semibold">{text.temp_max}</p>
                 )}
-                <p className="font-semibold text-xs">°C</p>
+                <p className="text-xs font-semibold">°C</p>
               </div>
             </div>
           </div>
