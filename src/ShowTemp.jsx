@@ -36,39 +36,56 @@ function ShowTemp({ text, input }) {
         )}
         <div className="flex justify-between px-3 mt-8">
           <div className="w-32 h-40 bg-white rounded-lg p-2">
-            <h5 class="text-sm text-gray-700">Temprature</h5>
+            <h5 className="text-sm text-gray-700">Temprature</h5>
             <div className="flex mt-2">
-              <p className="text-4xl font-semibold">{convertToK(text.temp)} </p>
+              {input ? (
+                <p className="text-4xl font-semibold">
+                  {convertToK(text.temp)}{" "}
+                </p>
+              ) : (
+                <p className="text-4xl font-semibold">{text.temp}</p>
+              )}
               <p className="font-semibold">°C</p>
             </div>
           </div>
           <div className="flex flex-col text-center justify-between">
-            <p class="text-gray-200">{text.description}</p>
+            <p className="text-gray-200">{text.description}</p>
             <div>
-              <img className="w-24" src={img}></img>
+              <img
+                className="w-24 hover:scale-125 transition-transform "
+                src={img}
+              ></img>
             </div>
             <div className="flex space-x-2">
-              <h5 class="card-title text-xs text-gray-200">Humidity </h5>
-              <p class="text-gray-200"> {text.humidity}%</p>
+              <h5 className="card-title text-xs text-gray-200">Humidity </h5>
+              <p className="text-gray-200"> {text.humidity}%</p>
             </div>
           </div>
 
           <div className="w-32 h-40 bg-white rounded-lg p-2">
             <div>
-              <p class="font-semibold text-xs">Min Temp : </p>
+              <p className="font-semibold text-xs">Min Temp : </p>
 
               <div className="flex pl-10">
-                <p className="text-lg font-semibold">
-                  {convertToK(text.temp_min)}{" "}
-                </p>
+                {input ? (
+                  <p className="text-4xl font-semibold">
+                    {convertToK(text.temp_min)}{" "}
+                  </p>
+                ) : (
+                  <p className="text-4xl font-semibold">{text.temp_min}</p>
+                )}
                 <p className="font-semibold text-xs">°C</p>
               </div>
-              <p class="font-semibold text-xs">Max Temp : </p>
+              <p className="font-semibold text-xs">Max Temp : </p>
 
               <div className="flex pl-10">
-                <p className="text-lg font-semibold">
-                  {convertToK(text.temp_max)}{" "}
-                </p>
+                {input ? (
+                  <p className="text-4xl font-semibold">
+                    {convertToK(text.temp_max)}{" "}
+                  </p>
+                ) : (
+                  <p className="text-4xl font-semibold">{text.temp_max}</p>
+                )}
                 <p className="font-semibold text-xs">°C</p>
               </div>
             </div>
