@@ -32,7 +32,7 @@ function ShowTemp({ text, input }) {
       <div className="">
         <p className="font-semibold text-center text-gray-200">{input}</p>
         {input && (
-          <hr className="mx-auto mt-1 text-center text-gray-200  sm:w-36"></hr>
+          <hr className="mx-auto mt-1 text-center text-gray-200  w-20 sm:w-36"></hr>
         )}
         <div className="flex justify-between px-3 mt-8">
           <div className="sm:w-32 sm:h-40 p-2 bg-white rounded-lg">
@@ -50,7 +50,7 @@ function ShowTemp({ text, input }) {
               <p className="font-semibold">°C</p>
             </div>
           </div>
-          <div className="flex flex-col justify-between p-3  text-center">
+          <div className="flex flex-col justify-between sm:p-3 p-0.5  text-center">
             <p className="text-gray-200">{text.description}</p>
             <div className="space-x-2">
               <img
