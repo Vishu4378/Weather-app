@@ -49,8 +49,8 @@ function App() {
 
   return (
     <>
-      <div className="h-screen flex w-full bg-gray-200">
-        <div className="bg-[#161652] border  rounded-xl m-auto border-black h-80 sm:h-96">
+      <div className="h-screen flex w-full justify-center items-center bg-gray-200">
+        <div className="bg-[#161652] border rounded-xl border-black h-80 sm:h-96">
           <div className="sm:p-8 p-1 ">
             <div
               onSubmit={handleClick}
