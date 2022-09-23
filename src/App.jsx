@@ -16,12 +16,21 @@ function App() {
     country: "",
   });
 
+  let c = {
+    g: "hey",
+  };
+  let d;
+  d = c;
+  c.g = "hello";
+
+  console.log("hhhhkh", d.g);
+
   const handleClick = () => {
     setInput(city);
 
     axios
       .get(
-        `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c412e32f8374f6a87ce341d095a159f6`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c412e32f8374f6a87ce341d095a159f6`
       )
       .then((response) => {
         console.log(response);
@@ -40,17 +49,17 @@ function App() {
 
   return (
     <>
-      <div className="bg-gray-200 h-screen pt-20">
+      <div className="h-screen pt-20 bg-gray-200">
         <div className="bg-[#161652] border w-2/5 rounded-xl m-auto border-black  h-96">
           <div className="p-4">
             <div
               onSubmit={handleClick}
-              className="container  my-2 text-center  items-center"
+              className="container items-center my-2 text-center"
             >
-              <h1 className="font-semibold text-4xl text-white">Weather In</h1>
+              <h1 className="text-4xl font-semibold text-white">Weather In</h1>
               <input
                 type="text"
-                className="border rounded-2xl pl-5 mt-3 "
+                className="pl-5 mt-3 border rounded-2xl "
                 value={city}
                 placeholder="Search for a City"
                 onChange={(e) => {
@@ -58,7 +67,7 @@ function App() {
                 }}
               />
               <button
-                className="bg-red-600 text-xs text-white font-semibold mt-2 px-3 py-1 mx-3 rounded"
+                className="px-3 py-1 mx-3 mt-2 text-xs font-semibold text-white bg-red-600 rounded"
                 type="submit"
                 onClick={handleClick}
               >
