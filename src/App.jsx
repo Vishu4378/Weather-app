@@ -49,14 +49,16 @@ function App() {
 
   return (
     <>
-      <div className="h-screen pt-20 bg-gray-200">
-        <div className="bg-[#161652] border w-2/5 rounded-xl m-auto border-black  h-96">
-          <div className="p-4">
+      <div className="h-screen flex w-full bg-gray-200">
+        <div className="bg-[#161652] border  rounded-xl m-auto border-black h-80 sm:h-96">
+          <div className="sm:p-8 p-1 ">
             <div
               onSubmit={handleClick}
               className="container items-center my-2 text-center"
             >
-              <h1 className="text-4xl font-semibold text-white">Weather In</h1>
+              <h1 className="text-2xl sm:text-4xl font-semibold text-white">
+                Weather In
+              </h1>
               <input
                 type="text"
                 className="pl-5 mt-3 border rounded-2xl "

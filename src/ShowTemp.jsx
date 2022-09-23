@@ -32,25 +32,27 @@ function ShowTemp({ text, input }) {
       <div className="">
         <p className="font-semibold text-center text-gray-200">{input}</p>
         {input && (
-          <hr className="mx-auto mt-1 text-center text-gray-200 w-36"></hr>
+          <hr className="mx-auto mt-1 text-center text-gray-200  sm:w-36"></hr>
         )}
         <div className="flex justify-between px-3 mt-8">
-          <div className="w-32 h-40 p-2 bg-white rounded-lg">
+          <div className="sm:w-32 sm:h-40 p-2 bg-white rounded-lg">
             <h5 className="text-sm text-gray-700">Temprature</h5>
             <div className="flex mt-2">
               {input ? (
-                <p className="text-4xl font-semibold">
+                <p className="text-2xl sm:text-4xl font-semibold">
                   {convertToK(text.temp)}{" "}
                 </p>
               ) : (
-                <p className="text-4xl font-semibold">{text.temp}</p>
+                <p className="text-2xl sm:text-4xl font-semibold">
+                  {text.temp}
+                </p>
               )}
               <p className="font-semibold">°C</p>
             </div>
           </div>
-          <div className="flex flex-col justify-between text-center">
+          <div className="flex flex-col justify-between p-3  text-center">
             <p className="text-gray-200">{text.description}</p>
-            <div>
+            <div className="space-x-2">
               <img
                 className="w-24 transition-transform hover:scale-125 "
                 src={img}
@@ -62,17 +64,19 @@ function ShowTemp({ text, input }) {
             </div>
           </div>
 
-          <div className="w-32 h-40 p-2 bg-white rounded-lg">
+          <div className="sm:w-32 sm:h-40 p-2 bg-white rounded-lg">
             <div>
               <p className="text-xs font-semibold">Min Temp : </p>
 
               <div className="flex pl-10">
                 {input ? (
-                  <p className="text-2xl font-semibold">
+                  <p className="text-lg sm:text-2xl font-semibold">
                     {convertToK(text.temp_min)}{" "}
                   </p>
                 ) : (
-                  <p className="text-2xl font-semibold">{text.temp_min}</p>
+                  <p className="text-lg sm:text-2xl font-semibold">
+                    {text.temp_min}
+                  </p>
                 )}
                 <p className="text-xs font-semibold">°C</p>
               </div>
@@ -80,11 +84,13 @@ function ShowTemp({ text, input }) {
 
               <div className="flex pl-10">
                 {input ? (
-                  <p className="text-2xl font-semibold">
+                  <p className="sm:text-2xl text-lg font-semibold">
                     {convertToK(text.temp_max)}{" "}
                   </p>
                 ) : (
-                  <p className="text-2xl font-semibold">{text.temp_max}</p>
+                  <p className="sm:text-2xl text-lg font-semibold">
+                    {text.temp_max}
+                  </p>
                 )}
                 <p className="text-xs font-semibold">°C</p>
               </div>
